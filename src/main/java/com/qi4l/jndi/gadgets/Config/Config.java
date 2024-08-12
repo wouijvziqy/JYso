@@ -81,6 +81,8 @@ public class Config {
     // 是否在序列化数据流中的 TC_RESET 中填充脏数据
     public static Boolean IS_DIRTY_IN_TC_RESET = false;
     public static Boolean IS_UTF_Bypass = false;
+    public static Boolean IS_Hessian1 = false;
+    public static Boolean IS_Hessian2 = false;
     // 填充的脏数据长度
     public static int DIRTY_LENGTH_IN_TC_RESET = 0;
 
@@ -112,7 +114,7 @@ public class Config {
         // Listener 型内存马，通常使用 ServletRequestListener， 关键方法 requestInitializedHandle
         KEY_METHOD_MAP.put("javax.servlet.ServletRequestListener", "requestInitializedHandle");
         // Websocket 型内存马，关键方法 onMessage
-        KEY_METHOD_MAP.put("javax.websocket.MessageHandler█Whole", "onMessage");
+        KEY_METHOD_MAP.put("javax.websocket.MessageHandler$Whole", "onMessage");
         // Tomcat Upgrade 型内存马，关键方法 accept
         KEY_METHOD_MAP.put("org.apache.coyote.UpgradeProtocol", "accept");
         // Tomcat Executor 型内存马，关键方法 execute
